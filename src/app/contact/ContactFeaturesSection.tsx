@@ -131,9 +131,10 @@ export default function ContactFeaturesSection() {
 
         {features.map((feature, index) => (
           <article
-            key={feature.title}
-            className={`cc-contact-feature cc-step cc-delay-${Math.min(index + 1, 4)}`}
-          >
+  key={feature.title}
+  className={`cc-contact-feature cc-step cc-delay-${Math.min(index + 1, 4)}`}
+  style={{ cursor: "pointer" }}
+>
             <span className="cc-contact-feature-icon">
               {feature.icon}
             </span>

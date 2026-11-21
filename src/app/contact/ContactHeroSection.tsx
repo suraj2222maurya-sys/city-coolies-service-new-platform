@@ -40,7 +40,7 @@ function MailIcon() {
       <path
         d="m5 7 7 5 7-5"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -80,7 +80,7 @@ function ArrowIcon() {
       <path
         d="M5 12h13M14 8l4 4-4 4"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -161,7 +161,8 @@ export default function ContactHeroSection() {
           <div className="cc-hero-actions">
 
             <a
-              className="cc-action cc-action-primary cc-hero-seq cc-hero-seq-7"
+             className="cc-action cc-action-primary cc-hero-seq cc-hero-seq-7"
+             style={{ cursor: "pointer" }}
             >
               <span>
                 Call Now
@@ -174,6 +175,7 @@ export default function ContactHeroSection() {
 
             <a
               className="cc-action cc-action-secondary cc-hero-seq cc-hero-seq-8"
+style={{ cursor: "pointer" }}
             >
               <span className="cc-action-start">
 

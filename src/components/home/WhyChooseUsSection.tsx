@@ -231,7 +231,7 @@ function CheckIcon({ className = "" }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="5"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -553,18 +553,18 @@ export default function WhyChooseUsSection() {
     className="group flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-red-200 bg-white text-red-600 shadow-sm transition duration-300 hover:border-red-600 hover:bg-red-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
   >
     <svg
-      aria-hidden="true"
-      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
+  aria-hidden="true"
+  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  strokeWidth="4"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m13 6 6 6-6 6" />
+</svg>
   </Link>
 
   <p>

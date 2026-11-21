@@ -481,35 +481,35 @@ export default function CareersCultureSection() {
           className="cc-culture-ticker"
           aria-hidden="true"
         >
-          <div>
-            <b>Meaningful Work</b>
-            <i>✦</i>
+          <div className="cc-culture-ticker__track">
+            {[0, 1].map((group) => (
+              <div
+                className="cc-culture-ticker__group"
+                key={group}
+              >
+                {Array.from({ length: 3 }, (_, repeat) => (
+                  <div
+                    className="cc-culture-ticker__set"
+                    key={repeat}
+                  >
+                    <b>Meaningful Work</b>
+                    <i>✦</i>
 
-            <b>Career Growth</b>
-            <i>✦</i>
+                    <b>Career Growth</b>
+                    <i>✦</i>
 
-            <b>Continuous Learning</b>
-            <i>✦</i>
+                    <b>Continuous Learning</b>
+                    <i>✦</i>
 
-            <b>Professional Culture</b>
-            <i>✦</i>
+                    <b>Professional Culture</b>
+                    <i>✦</i>
 
-            <b>Customer Trust</b>
-            <i>✦</i>
-
-            <b>Meaningful Work</b>
-            <i>✦</i>
-
-            <b>Career Growth</b>
-            <i>✦</i>
-
-            <b>Continuous Learning</b>
-            <i>✦</i>
-
-            <b>Professional Culture</b>
-            <i>✦</i>
-
-            <b>Customer Trust</b>
+                    <b>Customer Trust</b>
+                    <i>✦</i>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -1294,7 +1294,7 @@ export default function CareersCultureSection() {
           margin-top: 21px;
         }
 
-        .cc-story-progress button {
+          .cc-story-progress button {
           width: 33px;
           height: 5px;
 
@@ -2847,7 +2847,7 @@ export default function CareersCultureSection() {
             forwards;
         }
 
-        .cc-culture-ticker > div {
+        .cc-culture-ticker__track {
           display: flex;
           align-items: center;
 
@@ -2860,6 +2860,36 @@ export default function CareersCultureSection() {
             20s
             linear
             infinite;
+        }
+
+        /* SEAMLESS INFINITE TICKER */
+
+        .cc-culture-ticker__track {
+          display: flex;
+          align-items: center;
+          width: max-content;
+          gap: 0;
+          animation-duration: 60s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          will-change: transform;
+        }
+
+        .cc-culture-ticker__group {
+          display: flex;
+          align-items: center;
+          flex: 0 0 auto;
+          width: max-content;
+          gap: 0;
+        }
+
+        .cc-culture-ticker__set {
+          display: flex;
+          align-items: center;
+          flex: 0 0 auto;
+          width: max-content;
+          gap: 30px;
+          padding-right: 30px;
         }
 
         .cc-culture-ticker b {
@@ -3556,7 +3586,7 @@ export default function CareersCultureSection() {
           .cc-orbit i,
           .cc-floating-glass,
           .cc-motion-dot,
-          .cc-culture-ticker > div,
+          .cc-culture-ticker__track,
           .cc-story-beam {
             animation:
               none !important;

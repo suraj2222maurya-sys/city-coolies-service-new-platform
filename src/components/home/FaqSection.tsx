@@ -44,7 +44,7 @@ function PlusIcon({ className = "" }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="4"
       strokeLinecap="round"
     >
       <path d="M12 5v14" />
@@ -78,7 +78,7 @@ function ArrowIcon({ className = "" }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -156,6 +156,7 @@ const faqSchema = {
 
 export default function FaqSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const animationCompletedRef = useRef(false);
   const [revealMode, setRevealMode] = useState<
     "hidden" | "animated" | "instant"
@@ -301,7 +302,7 @@ export default function FaqSection() {
 
         <div className="mx-auto mt-9 grid max-w-5xl gap-4">
           {faqs.map((faq, index) => {
-            const isOpen = false;
+            const isOpen = openFaqIndex === index;
             const buttonId = `faq-button-${index}`;
             const panelId = `faq-panel-${index}`;
 
@@ -326,8 +327,8 @@ export default function FaqSection() {
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
-                    aria-disabled="true"
-                    className="group flex w-full items-center gap-4 px-5 py-5 text-left sm:px-6"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="group flex w-full cursor-pointer items-center gap-4 px-5 py-5 text-left sm:px-6"
                   >
                     <span
                       className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-sm font-black transition duration-300 ${
@@ -395,7 +396,7 @@ export default function FaqSection() {
           </div>
 
           <button type="button" aria-disabled="true"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-extrabold text-white shadow-[0_12px_26px_rgba(220,38,38,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 sm:w-auto"
+            className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-extrabold text-white shadow-[0_12px_26px_rgba(220,38,38,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 sm:w-auto"
           >
             Contact Our Team
             <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

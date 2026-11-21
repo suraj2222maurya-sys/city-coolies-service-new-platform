@@ -26,7 +26,7 @@ function ArrowIcon({ className = "" }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -182,10 +182,9 @@ export default function FinalCtaSection() {
           const element = entry.target as HTMLElement;
 
           if (entry.isIntersecting) {
-            element.classList.add("is-visible");
-          } else {
-            element.classList.remove("is-visible");
-          }
+  element.classList.add("is-visible");
+  observer.unobserve(element);
+}
         });
       },
       {
@@ -225,7 +224,7 @@ export default function FinalCtaSection() {
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         <div
           data-cta-reveal
-          className="cta-reveal relative overflow-hidden rounded-[34px] border border-red-500/30 bg-gradient-to-br from-red-600 via-red-600 to-red-700 px-6 py-10 shadow-[0_30px_90px_rgba(220,38,38,0.28)] sm:px-10 sm:py-12 lg:px-14 lg:py-14"
+          className="cta-reveal relative [&_button]:cursor-pointer overflow-hidden rounded-[34px] border border-red-500/30 bg-gradient-to-br from-red-600 via-red-600 to-red-700 px-6 py-10 shadow-[0_30px_90px_rgba(220,38,38,0.28)] sm:px-10 sm:py-12 lg:px-14 lg:py-14"
           style={{ "--delay": "0ms" } as CSSProperties}
         >
           <div

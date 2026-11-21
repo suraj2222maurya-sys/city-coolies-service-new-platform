@@ -1,4 +1,8 @@
+"use client";
 
+
+
+import { useEffect, useRef } from "react";
 
 const ABOUT_CTA_STYLES = `
   .cc-about-cta,
@@ -245,7 +249,8 @@ const ABOUT_CTA_STYLES = `
     gap: 10px;
   }
 
-  .cc-about-cta__button {
+    .cc-about-cta__button {
+    cursor: pointer;
     min-height: 50px;
     padding: 0 20px;
     display: inline-flex;
@@ -329,19 +334,133 @@ const ABOUT_CTA_STYLES = `
     }
   }
 
-  @supports (animation-timeline: view()) {
-    .cc-about-cta__card {
-      animation: ccAboutCtaReveal linear both;
-      animation-timeline: view();
-      animation-range: entry 7% cover 29%;
+    /* One-time section entrance animation */
+
+  .cc-cta-once-pending .cc-about-cta__card {
+    opacity: 0;
+    transform: translateY(32px) scale(0.985);
+  }
+
+  .cc-cta-once-visible .cc-about-cta__card {
+    animation: ccAboutCtaReveal 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes ccAboutCtaItemReveal {
+    from {
+      opacity: 0;
+      transform: translateY(26px);
     }
 
-    .cc-about-cta__action {
-      animation: ccAboutCtaPanel linear both;
-      animation-timeline: view();
-      animation-range: entry 12% cover 34%;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
+
+  @keyframes ccAboutCtaButtonReveal {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .cc-cta-once-visible .cc-about-cta__eyebrow,
+  .cc-cta-once-visible .cc-about-cta__title,
+  .cc-cta-once-visible .cc-about-cta__text,
+  .cc-cta-once-visible .cc-about-cta__proof li,
+  .cc-cta-once-visible .cc-about-cta__action-icon,
+  .cc-cta-once-visible .cc-about-cta__action-label,
+  .cc-cta-once-visible .cc-about-cta__action-title,
+  .cc-cta-once-visible .cc-about-cta__action-text,
+  .cc-cta-once-visible .cc-about-cta__note {
+    animation: ccAboutCtaItemReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__action {
+    animation: ccAboutCtaPanel 850ms 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__eyebrow {
+    animation-delay: 120ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__title {
+    animation-delay: 260ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__text {
+    animation-delay: 400ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__proof li:nth-child(1) {
+    animation-delay: 530ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__proof li:nth-child(2) {
+    animation-delay: 640ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__proof li:nth-child(3) {
+    animation-delay: 750ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__action-icon {
+    animation-delay: 840ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__action-label {
+    animation-delay: 960ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__action-title {
+    animation-delay: 1080ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__action-text {
+    animation-delay: 1200ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__button {
+    animation: ccAboutCtaButtonReveal 650ms both;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__button:nth-child(1) {
+    animation-delay: 1330ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__button:nth-child(2) {
+    animation-delay: 1450ms;
+  }
+
+  .cc-cta-once-visible .cc-about-cta__note {
+    animation-delay: 1570ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cc-cta-once-pending .cc-about-cta__card {
+      opacity: 1;
+      transform: none;
+    }
+
+    .cc-cta-once-visible .cc-about-cta__card,
+    .cc-cta-once-visible .cc-about-cta__action,
+    .cc-cta-once-visible .cc-about-cta__eyebrow,
+    .cc-cta-once-visible .cc-about-cta__title,
+    .cc-cta-once-visible .cc-about-cta__text,
+    .cc-cta-once-visible .cc-about-cta__proof li,
+    .cc-cta-once-visible .cc-about-cta__action-icon,
+    .cc-cta-once-visible .cc-about-cta__action-label,
+    .cc-cta-once-visible .cc-about-cta__action-title,
+    .cc-cta-once-visible .cc-about-cta__action-text,
+    .cc-cta-once-visible .cc-about-cta__button,
+    .cc-cta-once-visible .cc-about-cta__note {
+      animation: none !important;
+    }
+  }
+
 
   @media (max-width: 900px) {
     .cc-about-cta__card {
@@ -436,8 +555,54 @@ const ABOUT_CTA_STYLES = `
 `;
 
 export default function AboutCTASection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const reveal = () => {
+      section.classList.replace(
+        "cc-cta-once-pending",
+        "cc-cta-once-visible"
+      );
+    };
+
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      reveal();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          reveal();
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="cc-about-cta" aria-labelledby="about-cta-title">
+    <section
+      ref={sectionRef}
+      className="cc-about-cta cc-cta-once-pending"
+      aria-labelledby="about-cta-title"
+    >
       <div className="cc-about-cta__card">
         <div className="cc-about-cta__content">
           <p className="cc-about-cta__eyebrow">Let&apos;s Get Started</p>
@@ -534,7 +699,7 @@ export default function AboutCTASection() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"

@@ -127,7 +127,7 @@ function ArrowIcon() {
       <path
         d="M5 12h13M14 8l4 4-4 4"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

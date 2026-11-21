@@ -528,6 +528,14 @@ export default function CareersOpportunitiesSection() {
       </div>
 
       <style>{`
+        .cc-op-card {
+          cursor: default;
+        }
+
+        .cc-op-talent > a {
+          cursor: pointer;
+        }
+
         .cc-op {
           --cc-red: #ef1d2e;
           --cc-dark-red: #da071b;

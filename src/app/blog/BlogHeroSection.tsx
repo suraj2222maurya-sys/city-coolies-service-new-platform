@@ -501,24 +501,20 @@ export default function BlogHeroSection() {
           </div>
 
           <div className="cc-bh-actions">
-            <span className="cc-bh-primary">
+           <span className="cc-bh-primary" style={{ cursor: "pointer" }}>
               <span>
                 Explore Articles
               </span>
 
-              <i aria-hidden="true">
-                →
-              </i>
+              
             </span>
 
-            <span className="cc-bh-secondary">
+            <span className="cc-bh-secondary" style={{ cursor: "pointer" }}>
               <span>
                 Explore Services
               </span>
 
-              <i aria-hidden="true">
-                →
-              </i>
+              
             </span>
           </div>
         </div>
@@ -1403,7 +1399,7 @@ export default function BlogHeroSection() {
           display: inline-flex;
           align-items: center;
           justify-content:
-            space-between;
+            center;
 
           min-height: 48px;
 

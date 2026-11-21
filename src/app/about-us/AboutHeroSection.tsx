@@ -205,7 +205,7 @@ export default function AboutHeroSection() {
   <span>View Services</span>
 
   <span className="aboutCtaArrow" aria-hidden="true">
-    →
+    
   </span>
 </button>
           </div>

@@ -463,3 +463,27 @@ html {
     filter: brightness(1.08);
   }
 }
+
+
+/* =========================================
+   CITY_COOLIES_HIDE_SCROLLBARS_V1
+   Hide scrollbar visuals across all pages.
+   Preserve normal scrolling.
+========================================= */
+
+html,
+body,
+body * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* END CITY_COOLIES_HIDE_SCROLLBARS_V1 */

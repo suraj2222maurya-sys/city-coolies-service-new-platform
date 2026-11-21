@@ -323,10 +323,10 @@ export default function WorkProcessSection() {
             </div>
 
             <button type="button" aria-disabled="true"
-              className="group mx-5 mb-5 inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-extrabold text-white shadow-[0_12px_26px_rgba(220,38,38,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 sm:mx-6 sm:mb-0"
+             className="group mx-5 mb-5 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-extrabold text-white shadow-[0_12px_26px_rgba(220,38,38,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 sm:mx-6 sm:mb-0"
             >
               Explore Services
-              <svg aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m13 6 6 6-6 6" />
               </svg>

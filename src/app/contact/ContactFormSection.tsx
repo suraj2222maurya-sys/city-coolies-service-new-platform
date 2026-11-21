@@ -24,20 +24,20 @@ function SupportIcon() {
         cy="8"
         r="3.1"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
       />
 
       <path
         d="M6.4 19v-1.5c0-3 2.3-5.2 5.6-5.2s5.6 2.2 5.6 5.2V19"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
         strokeLinecap="round"
       />
 
       <path
         d="M4 11.4v3.4M20 11.4v3.4"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
         strokeLinecap="round"
       />
     </svg>
@@ -60,14 +60,14 @@ function ServicesIcon() {
       <path
         d="M9 8h7.2a2.8 2.8 0 0 1 2.8 2.8v5.4A2.8 2.8 0 0 1 16.2 19H12"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
         strokeLinecap="round"
       />
 
       <path
         d="m8 13 2 2 4-4"
         stroke="currentColor"
-        strokeWidth="1.7"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

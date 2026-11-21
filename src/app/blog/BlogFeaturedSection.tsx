@@ -289,14 +289,10 @@ export default function BlogFeaturedSection() {
             </div>
 
             <div className="cc-bf-actions">
-              <span className="cc-bf-primary">
+             <span className="cc-bf-primary" style={{ cursor: "pointer" }}>
                 <span>
                   Read Featured Guide
                 </span>
-
-                <i>
-                  →
-                </i>
               </span>
 
               <div className="cc-bf-read-meta">
@@ -1310,6 +1306,8 @@ export default function BlogFeaturedSection() {
         .cc-bf-primary i {
           font-size: 16px;
           font-style: normal;
+        
+          font-weight: 900;
         }
 
         .cc-bf-read-meta {
@@ -3127,6 +3125,12 @@ export default function BlogFeaturedSection() {
 }
 
 /* === CC FEATURED VIDEO REPLAY V2 END === */
+
+        /* CC_CENTERED_BUTTON_NO_ARROW_V1 */
+        .cc-bf .cc-bf-primary {
+          justify-content: center;
+          text-align: center;
+        }
 `}</style>
     </section>
   );

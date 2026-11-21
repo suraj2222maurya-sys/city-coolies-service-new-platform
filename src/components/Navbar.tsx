@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ServicesMarketplaceNavbar from "./ServicesMarketplaceNavbar";
-import CustomerAccountControl from "./CustomerAccountControl";
+import ServicesMarketplaceNavbar from "@/app/services/ServicesMarketplaceNavbar";
+
 
 const navigationLinks = [
   { label: "Home", href: "/" },
@@ -73,6 +73,7 @@ function ArrowIcon() {
   );
 }
 
+/* CITY_COOLIES_SERVICES_ORIGINAL_NAVBAR_V2 */
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,6 +116,10 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
+  /* CITY_COOLIES_DIRECT_SERVICES_HEADER_V1 */
+  if (isServicesRoute) {
+    return <ServicesMarketplaceNavbar />;
+  }
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="relative overflow-hidden bg-[#ef1b23] text-white">
@@ -209,8 +214,8 @@ export default function Navbar() {
           </span>
         </Link>
 
-          <div className={`hidden items-center gap-1 xl:flex ${isServicesRoute ? "min-w-0 flex-1 justify-end" : ""}`}>
-            {navigationLinks.map((item) => {
+          <div className={`hidden items-center gap-1 xl:flex ${isServicesRoute ? "min-w-0 flex-1 justify-start ml-[96px]" : ""}`}>
+            {navigationLinks.filter((item) => !isServicesRoute || item.href === "/services").map((item) => {
               const active = isActiveLink(item.href);
 
               return (
@@ -254,7 +259,13 @@ export default function Navbar() {
           >
             
             {/* CITY_COOLIES_ACCOUNT_CONTROL_DESKTOP */}
-            <CustomerAccountControl variant="pill" />
+            <Link
+  href="/services/login"
+  aria-label="Customer login"
+  className="flex min-h-8 items-center justify-center rounded-full border border-[#ef1b23] bg-[#ef1b23] px-3 text-[12px] font-extrabold tracking-[0.01em] text-white shadow-[0_10px_26px_-12px_rgba(239,27,35,0.8)] animate-[loginBlink_0.85s_ease-in-out_infinite] transition-all duration-200 hover:bg-[#d8171f] hover:shadow-[0_14px_32px_-12px_rgba(239,27,35,0.95)] active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ef1b23] sm:min-h-12 sm:px-8 sm:text-[14px]"
+>
+  Login
+</Link>
 
             <button type="button" aria-disabled="true"
               
@@ -323,23 +334,6 @@ export default function Navbar() {
                 <span>BOOK NOW</span>
               </button>
 
-              <div className="mt-3 grid gap-2 rounded-2xl border border-red-100 bg-white p-4 text-sm text-[#e71922] sm:grid-cols-2">
-                <a
-                  href="tel:+918693986939"
-                  className="flex items-center gap-2 font-semibold"
-                >
-                  <PhoneIcon />
-                  <span>+91 86939 86939</span>
-                </a>
-
-                <a
-                  href="mailto:citycooliescrm@gmail.com"
-                  className="flex items-center gap-2 font-semibold sm:justify-end"
-                >
-                  <EmailIcon />
-                  <span>citycooliescrm@gmail.com</span>
-                </a>
-              </div>
             </div>
           </div>
         </div>

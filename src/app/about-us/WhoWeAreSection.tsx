@@ -411,7 +411,8 @@ const WHO_WE_ARE_STYLES = `
     gap: 12px;
   }
 
-  .cc-about__button {
+    .cc-about__button {
+    cursor: pointer;
     min-height: 50px;
     padding: 0 21px;
     display: inline-flex;
@@ -658,7 +659,7 @@ export default function WhoWeAreSection() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
@@ -828,7 +829,7 @@ export default function WhoWeAreSection() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"

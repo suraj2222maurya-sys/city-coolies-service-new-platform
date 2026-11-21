@@ -292,7 +292,7 @@ sizes="(min-width: 1024px) 100vw, 1px"
 </div>
 </div>
           {/* Hero buttons */}
-          <div data-hero-group="actions" className="mt-7 flex flex-wrap items-center gap-5">
+          <div data-hero-group="actions" className="mt-7 flex flex-wrap items-center gap-5 [&>button]:cursor-pointer">
             <button type="button" aria-disabled="true"
               className="group inline-flex h-[56px] items-center gap-5 rounded-[13px] bg-[#f41620] py-2 pl-6 pr-2 text-[16px] font-bold text-white shadow-[0_14px_30px_rgba(244,22,32,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#dc1019]"
             >

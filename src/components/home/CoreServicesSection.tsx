@@ -142,7 +142,7 @@ export default function CoreServicesSection() {
     <section
       ref={sectionRef}
       id="core-services"
-      className="relative scroll-mt-24 overflow-hidden bg-[#fffafa] px-5 pb-12 pt-8 sm:px-8 sm:pb-14 sm:pt-10 lg:px-12 lg:pb-16 lg:pt-12"
+      className="relative scroll-mt-24 overflow-hidden bg-[#fffafa] px-5 pb-12 pt-8 sm:px-8 sm:pb-14 sm:pt-10 lg:px-16 xl:px-20 lg:pb-16 lg:pt-12"
     >
       <div
         className="pointer-events-none absolute inset-0"
@@ -154,7 +154,7 @@ export default function CoreServicesSection() {
         <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(rgba(239,27,35,0.12)_0.7px,transparent_0.7px)] [background-size:22px_22px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+     <div className="relative z-10 mx-auto w-full max-w-[1100px]">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <div
             className={`inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-5 py-2.5 shadow-[0_8px_24px_rgba(239,27,35,0.08)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
@@ -206,7 +206,7 @@ export default function CoreServicesSection() {
           </p>
         </div>
 
-        <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-5 lg:mt-10 lg:grid-cols-4 lg:gap-x-6 xl:grid-cols-5">
+        <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 sm:gap-x-5 lg:mt-10 lg:grid-cols-4 lg:gap-x-5 xl:grid-cols-5">
           {services.map((service, index) => (
             <div
               key={service.href}
@@ -215,7 +215,7 @@ export default function CoreServicesSection() {
                   ? `${270 + index * 55}ms`
                   : "0ms",
               }}
-              className={`min-w-0 transform-gpu transition-all duration-[520ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none ${
+             className={`min-w-0 cursor-pointer transform-gpu transition-all duration-[520ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none ${
                 isVisible
                   ? "translate-y-0 scale-100 opacity-100 blur-0"
                   : "translate-y-10 scale-[0.96] opacity-0 blur-[7px]"

@@ -488,10 +488,6 @@ export default function BlogArticlesSection() {
                     aria-label={`Read ${article.title}`}
                   >
                     Read Article
-
-                    <i>
-                      →
-                    </i>
                   </a>
                 </div>
               </article>
@@ -1530,8 +1526,9 @@ export default function BlogArticlesSection() {
             uppercase;
         }
 
-        .cc-ba-card-bottom a {
-          display: inline-flex;
+       .cc-ba-card-bottom a {
+  cursor: pointer;
+  display: inline-flex;
           align-items: center;
           justify-content: center;
 
@@ -1595,6 +1592,8 @@ export default function BlogArticlesSection() {
         .cc-ba-card-bottom a i {
           font-size: 13px;
           font-style: normal;
+        
+          font-weight: 900;
         }
 
         /*
@@ -2399,6 +2398,12 @@ export default function BlogArticlesSection() {
 }
 
 /* === CC BLOG KNOWLEDGE STREAM END === */
+
+        /* CC_CENTERED_BUTTON_NO_ARROW_V1 */
+        .cc-ba .cc-ba-card-bottom a {
+          justify-content: center;
+          text-align: center;
+        }
 `}</style>
     </section>
   );

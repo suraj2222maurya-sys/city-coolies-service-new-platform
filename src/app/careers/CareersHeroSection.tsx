@@ -1543,7 +1543,7 @@ export default function CareersHeroSection() {
           width: 18px;
           height: 18px;
 
-          stroke-width: 1.8;
+          stroke-width: 4;
 
           stroke-linecap: round;
           stroke-linejoin: round;

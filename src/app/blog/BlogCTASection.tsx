@@ -169,17 +169,13 @@ export default function BlogCTASection() {
           </div>
 
           <div className="cc-cta-actions">
-            <span className="cc-cta-primary">
+            <span className="cc-cta-primary" style={{ cursor: "pointer" }}>
               <span>
                 Explore Professional Services
               </span>
-
-              <i aria-hidden="true">
-                →
-              </i>
             </span>
 
-            <span className="cc-cta-call">
+            <span className="cc-cta-call" style={{ cursor: "pointer" }}>
               <span
                 className="cc-cta-call-icon"
                 aria-hidden="true"
@@ -1018,6 +1014,8 @@ export default function BlogCTASection() {
 
           background:
             var(--red);
+        
+          font-weight: 900;
         }
 
         .cc-cta-call {
@@ -1747,7 +1745,13 @@ export default function BlogCTASection() {
             animation: none !important;
           }
         }
-      `}</style>
+      
+        /* CC_CENTERED_BUTTON_NO_ARROW_V1 */
+        .cc-cta .cc-cta-primary {
+          justify-content: center;
+          text-align: center;
+        }
+`}</style>
     </section>
   );
 }

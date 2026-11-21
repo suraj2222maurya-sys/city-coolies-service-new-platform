@@ -235,9 +235,6 @@ export default function CareersCTASection() {
                 </h3>
               </div>
 
-              <i>
-                ↗
-              </i>
             </div>
 
             <div className="cc-form-grid">
@@ -478,7 +475,6 @@ export default function CareersCTASection() {
                 <input
                   id="cc-career-resume"
                   type="file"
-                  disabled
                   accept=".pdf,.doc,.docx"
                   onChange={(
                     event,
@@ -520,9 +516,7 @@ export default function CareersCTASection() {
                 Submit Application
               </span>
 
-              <i>
-                →
-              </i>
+             
             </button>
 
 
@@ -1384,6 +1378,11 @@ export default function CareersCTASection() {
             transparent;
         }
 
+        .cc-resume-field input,
+        .cc-resume-field input::file-selector-button {
+          cursor: pointer;
+        }
+
         .cc-resume-field small {
           color:
             var(--cc-muted);
@@ -1423,7 +1422,7 @@ export default function CareersCTASection() {
 
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
 
           width: 100%;
           min-height: 55px;
@@ -1765,7 +1764,93 @@ export default function CareersCTASection() {
               none !important;
           }
         }
-      `}</style>
+      
+        /* CC_CAREER_SELECT_RED_THEME_V1 */
+
+        .cc-form-grid select[name="role"] {
+          border: 1px solid #ff9aaa;
+          border-radius: 13px;
+          background-color: #ffffff;
+          color: #24252b;
+          box-shadow: 0 0 0 4px rgba(240, 32, 48, 0.07);
+        }
+
+        .cc-form-grid select[name="role"]:hover {
+          border-color: #f02030;
+        }
+
+        .cc-form-grid select[name="role"]:focus,
+        .cc-form-grid select[name="role"]:open {
+          outline: none;
+          border-color: #f02030;
+          background-color: #ffffff;
+          box-shadow: 0 0 0 4px rgba(240, 32, 48, 0.12);
+        }
+
+        @supports (appearance: base-select) {
+
+          .cc-form-grid select[name="role"],
+          .cc-form-grid select[name="role"]::picker(select) {
+            appearance: base-select;
+          }
+
+          .cc-form-grid select[name="role"]::picker(select) {
+            border: 1px solid #ff9aaa;
+            border-radius: 14px;
+            padding: 6px;
+            background: #fff8fa;
+            box-shadow: 0 16px 35px rgba(180, 20, 40, 0.15);
+            max-height: 320px;
+            overflow-y: auto;
+          }
+
+          .cc-form-grid select[name="role"] option {
+            padding: 11px 14px;
+            border-radius: 9px;
+            background: #fff8fa;
+            color: #24252b;
+            font-size: 14px;
+            cursor: pointer;
+          }
+
+          .cc-form-grid select[name="role"] option:hover,
+          .cc-form-grid select[name="role"] option:focus,
+          .cc-form-grid select[name="role"] option:checked {
+            background: #ed152a;
+            color: #ffffff;
+          }
+
+          .cc-form-grid select[name="role"] option::checkmark {
+            color: #ffffff;
+          }
+
+          .cc-form-grid select[name="role"]::picker-icon {
+            color: #d7091c;
+            transition: transform 180ms ease;
+          }
+
+          .cc-form-grid select[name="role"]:open::picker-icon {
+            transform: rotate(180deg);
+          }
+
+        }
+
+        /* CC_CAREER_ORIGINAL_ARROW_FIX_V1 */
+
+        /* Restore the original black outline dropdown arrow */
+        .cc-form-grid select[name="role"] {
+          padding-right: 44px;
+          background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2324252b%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E");
+          background-repeat: no-repeat;
+          background-position: right 14px center;
+          background-size: 18px 18px;
+        }
+
+        /* Hide the solid triangle added by base-select */
+        .cc-form-grid select[name="role"]::picker-icon {
+          display: none;
+        }
+`}</style>
     </section>
   );
 }

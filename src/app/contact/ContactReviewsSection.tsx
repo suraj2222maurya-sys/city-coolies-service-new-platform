@@ -43,7 +43,7 @@ function Arrow({
             : "m9 6 6 6-6 6"
         }
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -131,16 +131,27 @@ export default function ContactReviewsSection() {
             </p>
           </div>
 
-          <span className="cc-ready-google-button cc-step cc-delay-4">
+          <span className="cc-ready-google-button cc-step cc-delay-4" style={{ cursor: "pointer" }}>
             <GoogleMark />
 
             <span>
               View on Google
             </span>
 
-            <i>
-              →
-            </i>
+           <i aria-hidden="true">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="4"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+</i>
           </span>
         </div>
 

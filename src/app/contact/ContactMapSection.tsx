@@ -42,7 +42,7 @@ function ArrowIcon() {
       <path
         d="M5 12h13M14 8l4 4-4 4"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -113,8 +113,9 @@ export default function ContactMapSection() {
           <div className="cc-map-final-actions cc-step cc-delay-4">
 
             <span
-              className="cc-map-final-button cc-map-final-primary"
-            >
+  className="cc-map-final-button cc-map-final-primary"
+  style={{ cursor: "pointer" }}
+>
               <span className="cc-map-final-icon">
                 <LocationIcon />
               </span>
@@ -128,9 +129,10 @@ export default function ContactMapSection() {
               </span>
             </span>
 
-            <span
-              className="cc-map-final-button cc-map-final-secondary"
-            >
+           <span
+  className="cc-map-final-button cc-map-final-secondary"
+  style={{ cursor: "pointer" }}
+>
               <span className="cc-map-final-icon">
                 <PhoneIcon />
               </span>
